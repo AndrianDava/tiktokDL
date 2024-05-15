@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 
-:root{
+:root {
     --color-text: #525252;
     --color-primary: #7469B6;
     --color-primary-light: #B5C0D0;
@@ -9,51 +9,50 @@
     --white: #CCD3CA;
 }
 
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0;
     background-color: var(--color-bg);
     font-family: "Russo One", sans-serif;
 }
 
-.container{
-    max-width: 80%;
+.container {
+    max-width: 90%;
     min-height: 90vh;
     width: 100%;
     margin: 0 auto;
     display: grid;
     place-content: center;
+    padding: 1rem;
 }
 
-.card{
+.card {
     margin-top: 2rem;
     background-color: var(--white);
     padding: 1rem;
     border-radius: 10px;
 }
 
-.card h2{
+.card h2 {
     color: var(--color-text);
     font-weight: 500;
 }
-.card h2 b{
+
+.card h2 b {
     color: var(--color-primary);
 }
 
-form{
+form {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
 }
 
-form input{
-    margin-right: 5px;
-}
-
-form input:nth-child(1){
-    width: 80%;
+form input {
+    width: 100%;
     padding: .7rem;
     border-radius: 10px;
     border: 2px solid var(--color-primary-light);
@@ -64,20 +63,21 @@ form input:nth-child(1){
     transition: .3s ease-in-out;
 }
 
-form input:nth-child(1):focus, form input:nth-child(1):hover{
+form input:focus, form input:hover {
     border: 2px solid var(--color-primary);
 }
 
-.btn-submit{
+.btn-submit {
     background-color: var(--color-primary);
     border: none;
     border-radius: 10px;
     font-weight: 500;
     color: var(--white);
     cursor: pointer;
+    padding: 0.7rem;
 }
 
-.btn{
+.btn {
     margin-bottom: 1rem;
     padding: 0.4rem;
     background-color: var(--color-primary);
@@ -87,12 +87,12 @@ form input:nth-child(1):focus, form input:nth-child(1):hover{
     text-align: center;
 }
 
-.btn-submit:disabled{
+.btn-submit:disabled {
     background-color: var(--color-primary-light);
 }
 
-.content{
-    min-width: 300px;
+.content {
+    width: 100%;
     border-radius: 10px;
     margin-top: 1rem;
     min-height: 300px;
@@ -102,55 +102,73 @@ form input:nth-child(1):focus, form input:nth-child(1):hover{
     padding: 1rem;
 }
 
-.content video{
+.content video {
     justify-self: center;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     border-radius: 10px;
 }
 
 @media screen and (min-width: 720px) {
-    .content{
+    .container {
+        max-width: 80%;
+    }
+
+    form {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    form input:nth-child(1) {
+        width: 80%;
+    }
+
+    .content {
         width: 400px;
     }
-    .content ol{
+
+    .content ol {
         font-size: 12px;
     }
 
-    .content video{
+    .content video {
         width: 200px;
     }
 }
 
-footer{
+footer {
     margin-top: 1rem;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    padding: 1rem;
 }
 
-footer h3{
+footer h3 {
     color: var(--color-text);
     font-weight: 300;
     font-size: 14px;
     margin: 0;
 }
-footer b{
+
+footer b {
     font-weight: 500;
     color: var(--color-primary);
 }
 
-footer p{
+footer p {
     margin: 0;
     font-size: 12px;
     text-align: center;
     color: var(--color-text);
 }
 
-.btn-instagram{
+.btn-instagram {
     text-decoration: none;
 }
 
-.messageError{
+.messageError {
     color: var(--color-danger);
 }
