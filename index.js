@@ -1,53 +1,28 @@
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
-import Koa from 'koa';
-import Router from 'koa-router';
-import bodyParser from 'koa-bodyparser';
-import serve from 'koa-static';
-import logger from 'koa-logger';
-import responseTime from 'koa-response-time';
-import ratelimit from 'koa-ratelimit';
-import scraper from 'btch-downloader';
+import express from 'express';
+import bodyParser from 'body-parser';
+import { tiktokDL } from './src/tiktokDL.js';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-const app = new Koa();
-const router = new Router();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(serve('public'));
-app.use(logger());
-app.use(responseTime());
-app.use(bodyParser());
+app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.json());
 
-app.use(
-  ratelimit({
-    driver: 'memory',
-    db: new Map(),
-    duration: 1000 * 55,
-    errorMessage: {
-      ok: false,
-      error: {
-        code: 429,
-        message: 'Rate limit exceeded. See "Retry-After"'
-      }
-    },
-    id: (ctx) => ctx.ip,
-    headers: {
-      remaining: 'Rate-Limit-Remaining',
-      reset: 'Rate-Limit-Reset',
-      total: 'Rate-Limit-Total'
-    },
-    max: 100
-  })
-);
-
-router.get('/tiktok/api.php', async (ctx) => {
-  let urls = ctx.request.query.url;
-  let { audio, video } = await scraper.ttdl(urls);
-  ctx.body = { audio, video };
-});
-
-app.use(router.routes());
+app.post('/url', async (req, res) => {
+    let { videoUrl } = req.body;
+    
+    // get url video
+    let {nowm, wm, music} = await tiktokDL(videoUrl);
+    res.send(JSON.stringify({nowm, wm, music}))
+})
 
 app.listen(port, () => {
-  console.log(`Server started on - http://localhost:${port}`);
-  console.log(`Port - ${port}`);
-});
+    console.log(`servidor activado - http://localhost:${port}`)
+    console.log(`${process.env.RAILWAY_STATIC_URL}`)
+    console.log(`server actived - port: ${port}`);
+})
