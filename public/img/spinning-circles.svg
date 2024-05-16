@@ -1,1 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><radialGradient id="a12" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)"><stop offset="0" stop-color="#FF57F6"></stop><stop offset=".3" stop-color="#FF57F6" stop-opacity=".9"></stop><stop offset=".6" stop-color="#FF57F6" stop-opacity=".6"></stop><stop offset=".8" stop-color="#FF57F6" stop-opacity=".3"></stop><stop offset="1" stop-color="#FF57F6" stop-opacity="0"></stop></radialGradient><circle transform-origin="center" fill="none" stroke="url(#a12)" stroke-width="15" stroke-linecap="round" stroke-dasharray="200 1000" stroke-dashoffset="0" cx="100" cy="100" r="70"><animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2" values="360;0" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite"></animateTransform></circle><circle transform-origin="center" fill="none" opacity=".2" stroke="#FF57F6" stroke-width="15" stroke-linecap="round" cx="100" cy="100" r="70"></circle></svg>
+<!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->
+<svg width="58" height="58" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(2 1)" stroke="#7241FF" stroke-width="1.5">
+            <circle cx="42.601" cy="11.462" r="5" fill-opacity="1" fill="#7241FF">
+                <animate attributeName="fill-opacity"
+                     begin="0s" dur="1.3s"
+                     values="1;0;0;0;0;0;0;0" calcMode="linear"
+                     repeatCount="indefinite" />
+            </circle>
+            <circle cx="49.063" cy="27.063" r="5" fill-opacity="0" fill="#7241FF">
+                <animate attributeName="fill-opacity"
+                     begin="0s" dur="1.3s"
+                     values="0;1;0;0;0;0;0;0" calcMode="linear"
+                     repeatCount="indefinite" />
+            </circle>
+            <circle cx="42.601" cy="42.663" r="5" fill-opacity="0" fill="#7241FF">
+                <animate attributeName="fill-opacity"
+                     begin="0s" dur="1.3s"
+                     values="0;0;1;0;0;0;0;0" calcMode="linear"
+                     repeatCount="indefinite" />
+            </circle>
+            <circle cx="27" cy="49.125" r="5" fill-opacity="0" fill="#7241FF">
+                <animate attributeName="fill-opacity"
+                     begin="0s" dur="1.3s"
+                     values="0;0;0;1;0;0;0;0" calcMode="linear"
+                     repeatCount="indefinite" />
+            </circle>
+            <circle cx="11.399" cy="42.663" r="5" fill-opacity="0" fill="#7241FF">
+                <animate attributeName="fill-opacity"
+                     begin="0s" dur="1.3s"
+                     values="0;0;0;0;1;0;0;0" calcMode="linear"
+                     repeatCount="indefinite" />
+            </circle>
+            <circle cx="4.938" cy="27.063" r="5" fill-opacity="0" fill="#7241FF">
+                <animate attributeName="fill-opacity"
+                     begin="0s" dur="1.3s"
+                     values="0;0;0;0;0;1;0;0" calcMode="linear"
+                     repeatCount="indefinite" />
+            </circle>
+            <circle cx="11.399" cy="11.462" r="5" fill-opacity="0" fill="#7241FF">
+                <animate attributeName="fill-opacity"
+                     begin="0s" dur="1.3s"
+                     values="0;0;0;0;0;0;1;0" calcMode="linear"
+                     repeatCount="indefinite" />
+            </circle>
+            <circle cx="27" cy="5" r="5" fill-opacity="0" fill="#7241FF">
+                <animate attributeName="fill-opacity"
+                     begin="0s" dur="1.3s"
+                     values="0;0;0;0;0;0;0;1" calcMode="linear"
+                     repeatCount="indefinite" />
+            </circle>
+        </g>
+    </g>
+</svg>
